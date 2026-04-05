@@ -33,7 +33,7 @@ st.sidebar.image("https://avatars.githubusercontent.com/imsourodeep", width=80)
 st.sidebar.markdown("## About")
 st.sidebar.markdown("This app predicts your final exam grade using a **Machine Learning** model and provides personalized study advice powered by **Groq AI (LLaMA 3.1)**.")
 st.sidebar.markdown("---")
-st.sidebar.markdown("**Made by Sourodeep**")
+st.sidebar.markdown("**Made by Sourodeep Guin**")
 st.sidebar.markdown("🔗 [GitHub](https://github.com/imsourodeep)")
 
 # ── Load ML model (train if not found) ─────────────────────────────
@@ -179,6 +179,6 @@ Keep the tone warm, motivating, and practical."""
 # ── Footer ──────────────────────────────────────────────────────────
 st.divider()
 st.markdown(
-    "<div style='text-align:center; color:gray; font-size:12px;'>© 2024 Sourodeep | Student Grade Predictor | Powered by ML + Groq AI</div>",
+    "<div style='text-align:center; color:gray; font-size:12px;'>© 2026 Sourodeep Guin| Student Grade Predictor | Powered by ML + Groq AI</div>",
     unsafe_allow_html=True
 )
