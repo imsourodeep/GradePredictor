@@ -14,14 +14,27 @@ load_dotenv()
 
 # ── Page config ────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Student Grade Predictor",
+    page_title="Grade Predictor by Sourodeep",
     page_icon="🎓",
     layout="centered"
 )
 
+# ── Header ─────────────────────────────────────────────────────────
 st.title("🎓 Student Grade Predictor")
 st.markdown("Fill in your details below to predict your final exam grade and get personalized advice.")
+st.markdown(
+    "<div style='text-align:right; color:gray; font-size:13px;'>Built by <b>Sourodeep</b> | ML + Groq AI</div>",
+    unsafe_allow_html=True
+)
 st.divider()
+
+# ── Sidebar ─────────────────────────────────────────────────────────
+st.sidebar.image("https://avatars.githubusercontent.com/imsourodeep", width=80)
+st.sidebar.markdown("## About")
+st.sidebar.markdown("This app predicts your final exam grade using a **Machine Learning** model and provides personalized study advice powered by **Groq AI (LLaMA 3.1)**.")
+st.sidebar.markdown("---")
+st.sidebar.markdown("**Made by Sourodeep**")
+st.sidebar.markdown("🔗 [GitHub](https://github.com/imsourodeep)")
 
 # ── Load ML model (train if not found) ─────────────────────────────
 @st.cache_resource
@@ -126,14 +139,13 @@ Please give this student:
 
 Keep the tone warm, motivating, and practical."""
 
-                # Groq API call
                 headers = {
                     "Authorization": f"Bearer {api_key}",
                     "Content-Type": "application/json"
                 }
 
                 payload = {
-                    "model": "llama-3.1-8b-instant",  # Free model on Groq
+                    "model": "llama-3.1-8b-instant",
                     "messages": [
                         {"role": "user", "content": prompt}
                     ],
@@ -151,7 +163,7 @@ Keep the tone warm, motivating, and practical."""
                 st.markdown(advice)
 
             except Exception as e:
-                st.error(f"❌ Groq API error: {str(e)}\nDebug: {response.text}")
+                st.error(f"❌ Groq API error: {str(e)}")
 
     # ── Step 4: Show input summary ───────────────────────────────────
     with st.expander("📋 See your input summary"):
@@ -163,3 +175,10 @@ Keep the tone warm, motivating, and practical."""
             "Extracurricular": "Yes" if extracurricular else "No",
             "Predicted Grade": predicted_grade
         })
+
+# ── Footer ──────────────────────────────────────────────────────────
+st.divider()
+st.markdown(
+    "<div style='text-align:center; color:gray; font-size:12px;'>© 2024 Sourodeep | Student Grade Predictor | Powered by ML + Groq AI</div>",
+    unsafe_allow_html=True
+)
