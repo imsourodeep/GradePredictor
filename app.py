@@ -14,7 +14,7 @@ load_dotenv()
 
 # ── Page config ────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Grade Predictor by Sourodeep",
+    page_title="Grade Predictor by Sourodeep Guin",
     page_icon="🎓",
     layout="centered"
 )
@@ -23,7 +23,7 @@ st.set_page_config(
 st.title("🎓 Student Grade Predictor")
 st.markdown("Fill in your details below to predict your final exam grade and get personalized advice.")
 st.markdown(
-    "<div style='text-align:right; color:gray; font-size:13px;'>Built by <b>Sourodeep</b> | ML + Groq AI</div>",
+    "<div style='text-align:right; color:gray; font-size:13px;'>Built by <b>Sourodeep Guin</b> | ML + Groq AI</div>",
     unsafe_allow_html=True
 )
 st.divider()
